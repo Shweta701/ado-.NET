@@ -1,0 +1,27 @@
+﻿@model WebApplication4.ViewModel.Department
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create Department </h2>
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        
+        @using(Html.BeginForm("Create", "Department", FormMethod.Post))
+
+        {
+        <div class="Form-group">
+            @Html.DisplayNameFor(e=>e.Name)
+            @Html.TextBoxFor(e=>e.Name,new {@class="form-control"})
+            @Html.ValidationMessage("Name", new {@class="text-danger" })
+        </div>
+           
+            <div class="form-group">
+    
+            <button type="submit" class="btn btn-primary" value="Submit">Submit</button>
+       
+    </div>
+        }
+</div>
+    </div>
+

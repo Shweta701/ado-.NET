@@ -1,0 +1,18 @@
+﻿@model IEnumerable<WebApplication4.ViewModel.Department>
+    <ul>
+        <li>@Html.ActionLink("Create","Create")</li>
+    </ul>
+    <table class="table table-bordered">
+        <tr>
+            <th>Name</th>
+            <th>Action</th>
+        </tr>
+        @foreach(var e in Model)
+            {
+                <tr>
+                    <td>@e.Name</td>
+                    <td>@Html.ActionLink("Edit","Edit", "Department", new { id = e.Id }, new { @class = "btn btn-primary" }) || @Html.ActionLink("Delete", "Delete", "Department", new { id = e.Id }, new { @class = "btn btn-danger" })</td>
+                </tr>
+            }
+    </table>
+
